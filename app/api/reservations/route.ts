@@ -82,9 +82,13 @@ export async function POST(request: NextRequest) {
           userId: currentUser.id,
         },
         success_url:
-          "https://causal-sturgeon-personally.ngrok-free.app/payment/success",
+          process.env.NODE_ENV === "development"
+            ? "http://localhost:3000/payment/success"
+            : "https://staynest-mu.vercel.app/payment/success",
         cancel_url:
-          "https://causal-sturgeon-personally.ngrok-free.app/payment/cancel",
+          process.env.NODE_ENV === "development"
+            ? "http://localhost:3000/payment/cancel"
+            : "https://staynest-mu.vercel.app/payment/cancel",
       });
 
       if (!session) throw new Error("Failed to create payment session");
