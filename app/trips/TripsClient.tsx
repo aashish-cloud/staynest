@@ -43,7 +43,7 @@ const TripsClient = ({ reservations, currentUser }: TripsClientProps) => {
     <Container>
       <h1 className="text-2xl font-bold">Trips</h1>
       <p className="text-muted-foreground">
-        Where you've been and where you're going?
+        Where you've been and where you&apos;re going?
       </p>
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
         {reservations.map((reservation) => (

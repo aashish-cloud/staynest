@@ -166,7 +166,7 @@ const LoginModal = () => {
                 <p className="flex-1">Continue with GitHub</p>
               </Button>
               <div className="text-neutral-500 text-center mt-4 font-light flex flex-row justify-center items-center gap-1 text-sm">
-                <p>Don't have an account?</p>
+                <p>Don&apos;t have an account?</p>
                 <p
                   onClick={() => {
                     loginModal.onClose();
