@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# StayNest 🏠
 
-## Getting Started
+StayNest is a comprehensive property rental platform built with Next.js, TypeScript, Prisma, MongoDB, NextAuth, Stripe, and Zustand. It offers advanced search, booking, and property management features, ensuring a seamless experience for both users and property managers.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User Authentication: 🔐 Secure login and registration using NextAuth.
+- Property Search: 🔍 Advanced search functionality for users to find rental properties.
+- Booking System: 🗓 Users can book properties with real-time availability and secure payment processing via Stripe.
+- Property Management: 🏢 Property managers can list, manage, and update their properties.
+- State Management: ⚡️ Efficient state management with Zustand.
+- Form Handling: 📝 Robust form handling with Zod and React Hook Form.
+- Concurrency Control: 🔄 Ensured data integrity and concurrency control during bookings with transaction handling and concurrent request testing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js: 🚀 A React framework for server-side rendering and static site generation.
+- TypeScript: 🛠 A statically typed superset of JavaScript for better development experience and code quality.
+- Prisma: 🗃 An ORM for interacting with MongoDB.
+- MongoDB: 📊 A NoSQL database used for storing application data.
+- NextAuth: 🔑 Authentication library for Next.js applications.
+- Stripe: 💳 Payment processing platform for handling secure transactions.
+- Zustand: 🐻 A small, fast, and scalable bearbones state-management solution.
+- Zod: 📜 A TypeScript-first schema declaration and validation library.
+- React Hook Form: 📋 A library for handling forms in React with ease.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To get started with StayNest, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the Repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    
+    git clone https://github.com/aashish-cloud/staynest.git
+    
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate to the Project Directory:
 
-## Deploy on Vercel
+    
+    cd staynest
+    
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install Dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    
+    npm install
+    
+
+4. Configure Environment Variables:
+
+    Create a .env.local file in the root directory of the project and add the following environment variables:
+
+    
+    MONGODB_URI=your_mongodb_uri
+    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_SECRET=your_nextauth_secret
+    STRIPE_SECRET_KEY=your_stripe_secret_key
+    
+
+    Replace the placeholder values with your actual credentials.
+
+5. Run Migrations:
+
+    
+    npx prisma migrate dev
+    
+
+6. Start the Development Server:
+
+    
+    npm run dev
+    
+
+    The application should now be running at http://localhost:3000.
+
+## Usage
+
+- Authentication: 🔐 Users can register and log in using the authentication system powered by NextAuth.
+- Property Search: 🔍 Navigate to the search page to find rental properties based on various criteria.
+- Booking: 🗓 Users can select a property and proceed with the booking process using Stripe for secure payments.
+- Property Management: 🏢 Property managers can access a dashboard to manage their properties and bookings.
+
+## Concurrency Control
+
+StayNest ensures data integrity and handles concurrent requests effectively. Concurrency control is managed through transaction handling during bookings, validated by rigorous concurrent request testing. 🔄 This approach ensures that multiple users can book properties simultaneously without data conflicts or inconsistencies.
